@@ -1,4 +1,4 @@
-name: Deploy Slidev to GitHub Pages (pnpm)
+name: Deploy Slidev to GitHub Pages
 
 on:
   push:
@@ -23,16 +23,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
+          cache: npm
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
+      - run: npm ci || npm i
 
-      # évite l'erreur frozen-lockfile si ton pnpm-lock.yaml n'est pas à jour
-      - run: pnpm install --no-frozen-lockfile
-
-      - run: pnpm dlx slidev@latest build --base /CompagnonBatisseur/
+      # base = nom EXACT du repo (casse respectée)
+      - run: npx slidev build --base /CompagnonBatisseur/
 
       - run: cp dist/index.html dist/404.html && touch dist/.nojekyll
 
