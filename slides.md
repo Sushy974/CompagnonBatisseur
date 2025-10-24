@@ -19,7 +19,7 @@ layout: cover
 /* ---------- Palette marque inspirée de creapp-i.com ---------- */
 /* Bleu nuit (fond), cyan (accent), bleu moyen (secondaire) */
 :root {
-  --brand-bg: #0d1b2a;     /* bleu nuit */
+  --brand-bg:rgb(18, 42, 66);     /* bleu nuit */
   --brand-primary: #112a46;/* bleu profond */
   --brand-secondary: #1b3b5a; /* bleu moyen */
   --brand-accent: #06b6d4; /* cyan */
