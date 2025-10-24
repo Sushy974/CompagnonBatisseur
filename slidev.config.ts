@@ -2,6 +2,6 @@ import { defineSlidevConfig } from 'slidev'
 
 export default defineSlidevConfig({
     vite: {
-        base: '/Compagnon-Batisseur/',
+        base: '/CompagnonBatisseur/',
     },
 })
