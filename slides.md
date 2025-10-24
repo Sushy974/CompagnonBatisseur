@@ -7,8 +7,8 @@ layout: cover
 fonts:
   sans: 'Inter'
   heading: 'Monstera, Montserrat, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial'
-# Fonds verts pour toutes les slides (défaut)
-background: linear-gradient(145deg, #1fb78f 0%, #0e6e49 40%, #0a573a 80%, #094d34 100%)
+# Fond blanc (charte Créapp-i)
+background: '#ffffff'
 class: text-center
 ---
 
@@ -16,26 +16,24 @@ class: text-center
 /* ---- Polices web (fallback si Monstera non chargée) ---- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap');
 
-/* ---- Palette Creapp-i (verts contrastés) ---- */
+/* ---- Palette Créapp-i (vert #168C71) ---- */
 :root{
-  --brand-25:  #e7fff3;
-  --brand-50:  #cffff0;
-  --brand-100: #b7f7e2;
-  --brand-200: #8eeccf;
-  --brand-300: #5fdcb9;
-  --brand-400: #36c9a1;
-  --brand-500: #1fb78f;
-  --brand-600: #149a77;
-  --brand-700: #0e7e60;
-  --brand-800: #0b614b;
-  --brand-900: #0a573a; /* vert fond principal */
-  --ink-0:    #ffffff;
-  --ink-1:    #f9fafb;
-  --ink-2:    #e5eef0;
-  --ink-3:    #d1dbe0;
-  --text-strong: #000000;
-  --text-soft:   #333333;
-  --ring: rgba(255,255,255,.22);
+  --brand-25:  #e6f7f2;
+  --brand-50:  #ccefe5;
+  --brand-100: #99dfcb;
+  --brand-200: #66cfb1;
+  --brand-300: #33bf97;
+  --brand-400: #1aa37d;
+  --brand-500: #168C71;
+  --brand-600: #127560;
+  --brand-700: #0e5e4f;
+  --brand-800: #0a473e;
+  --brand-900: #06302d;
+  --bg-main:   #f5f5f5;
+  --bg-white:  #ffffff;
+  --text-strong: #1a1a1a;
+  --text-soft:   #4a4a4a;
+  --text-light:  #6b7280;
 }
 
 /* ---- Globaux ---- */
@@ -43,118 +41,120 @@ class: text-center
   color: var(--text-strong);
   text-align: center;
 }
-h1,h2,h3,h4 { 
-  font-family: "Monstera", Montserrat, Inter, sans-serif; 
-  color: var(--brand-900); 
+h1,h2,h3,h4 {
+  font-family: "Monstera", Montserrat, Inter, sans-serif;
+  color: var(--text-strong);
   letter-spacing: 0.2px;
 }
-h1 { font-weight: 800; }
-h2 { font-weight: 800; }
-h3 { font-weight: 700; }
+h1 { font-weight: 800; font-size: 1.8rem; }
+h2 { font-weight: 800; font-size: 1.3rem; }
+h3 { font-weight: 700; font-size: 1.1rem; }
+p, li { font-size: 0.95rem; line-height: 1.5; }
 
-/* ---- Composants lisibles sur fond vert ---- */
+/* ---- Composants carte ---- */
 .card {
   background: #ffffff;
   color: var(--text-soft);
-  border: 2px solid var(--brand-200);
-  border-radius: 22px;
-  padding: 22px;
-  box-shadow: 0 10px 26px rgba(0,0,0,.18);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
-.card.alt { 
-  background: linear-gradient(135deg, #f9fffb 0%, var(--brand-25) 100%);
-  border: 2px solid var(--brand-300);
+.card.alt {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 
 .pill {
   display:inline-flex; align-items:center; gap:.5rem;
-  background: linear-gradient(135deg, var(--brand-100) 0%, var(--brand-200) 100%);
-  color: var(--brand-900);
-  border: 2px solid var(--brand-400);
-  padding:.35rem .75rem; border-radius:999px; font-weight:700; font-size:.85rem;
-  box-shadow: 0 4px 12px rgba(31,183,143,.2);
+  background: var(--brand-500);
+  color: white !important;
+  padding:.4rem .85rem; border-radius:999px; font-weight:700; font-size:.8rem;
+  box-shadow: 0 2px 6px rgba(22,140,113,.15);
 }
 
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:22px; justify-items: center; }
 .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; justify-items: center; }
 
 .kpi {
-  background: linear-gradient(135deg, #fff 0%, var(--brand-25) 100%);
-  border: 2px solid var(--brand-200);
-  border-radius:18px; 
-  padding:14px 16px; 
+  background: #ffffff;
+  border-radius:12px;
+  padding:14px 16px;
   color:var(--text-soft);
-  box-shadow: 0 4px 12px rgba(31,183,143,.1);
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
 }
-.kpi b { color: var(--brand-800); }
+.kpi b { color: var(--brand-600); }
 
 /* ---- Tableaux ---- */
 table{
   width:100%; border-collapse:separate; border-spacing:0; overflow:hidden;
-  background:#fff; color:var(--text-soft); border-radius:16px; border:2px solid var(--brand-200);
-  box-shadow: 0 8px 22px rgba(0,0,0,.12);
+  background:#fff; color:var(--text-soft); border-radius:12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
-th,td{ padding:12px 14px; }
-thead th{ 
-  background: linear-gradient(135deg, var(--brand-100) 0%, var(--brand-200) 100%); 
-  color:var(--brand-900); 
-  text-align:left; 
-  font-weight:800; 
-  border-bottom:2px solid var(--brand-300); 
+th,td{ padding:12px 16px; font-size: 0.95rem; }
+thead th{
+  background: var(--brand-500);
+  color: white;
+  text-align:left;
+  font-weight:700;
 }
-tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
+tbody tr:not(:last-child) td { border-bottom:1px solid #f0f0f0; }
 
 /* ---- Boutons ---- */
 .btn {
-  display:inline-block; 
-  background: linear-gradient(135deg, var(--brand-500) 0%, var(--brand-600) 100%);
-  color:white !important; 
+  display:inline-block;
+  background: var(--brand-500);
+  color:white !important;
   text-decoration:none;
-  padding:10px 16px; 
-  border-radius:14px; 
-  font-weight:800; 
+  padding:10px 20px;
+  border-radius:8px;
+  font-weight:700;
+  font-size: 0.95rem;
   letter-spacing:.2px;
-  border: 2px solid var(--brand-700);
-  box-shadow: 0 8px 22px rgba(31,183,143,.3);
+  box-shadow: 0 4px 12px rgba(22,140,113,.25);
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background: var(--brand-600);
+  box-shadow: 0 6px 16px rgba(22,140,113,.3);
 }
 .btn.secondary {
-  background: linear-gradient(135deg, #ffffff 0%, var(--brand-25) 100%);
-  color:var(--brand-800) !important; 
-  border: 2px solid var(--brand-300);
-  box-shadow: 0 4px 12px rgba(31,183,143,.2);
+  background: white;
+  color:var(--brand-600) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.btn.secondary:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
 }
 
 /* ---- Logos ---- */
 .logo-row{ display:flex; gap:24px; align-items:center; flex-wrap:wrap; justify-content: center; }
-.logo-row img{ 
-  background: linear-gradient(135deg, #fff 0%, var(--brand-25) 100%); 
-  border-radius:16px; 
-  padding:20px; 
-  border: 2px solid var(--brand-200); 
-  box-shadow:0 6px 16px rgba(31,183,143,.15);
-  max-width: 200px;
-  min-height: 100px;
+.logo-row img{
+  background: white;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+  max-width: 180px;
+  min-height: 90px;
   object-fit: contain;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 .logo-row img:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
 }
 
-/* ---- Encarts translucides pour titres sur fond vert ---- */
+/* ---- Encart titre page de couverture ---- */
 .glass {
-  backdrop-filter: blur(6px);
-  background: linear-gradient(180deg, rgba(31,183,143,.25), rgba(31,183,143,.15));
-  border: 2px solid rgba(31,183,143,.4);
-  border-radius: 18px;
-  padding: 12px 16px;
+  background: white;
+  border-radius: 16px;
+  padding: 32px 40px;
   display: inline-block;
-  box-shadow: 0 8px 22px rgba(31,183,143,.2);
+  box-shadow: 0 4px 16px rgba(0,0,0,.08);
 }
 </style>
 
-<div class="glass">
-  <h1>Proposition commerciale</h1>
+<div class="glass" style="width:100%; max-width:900px">
+  <h1 style="font-size:1.75rem; margin-bottom:8px">Proposition commerciale</h1>
   <h2>Compagnons-Bâtisseurs</h2>
 </div>
 
@@ -163,20 +163,20 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
 <div class="card">
   <p><b>Création d'un système d'information sur mesure</b></p>
   <div class="logo-row" style="margin-top:10px">
-    <img src="https://static.wixstatic.com/media/513107_4949f92e885b46b2b8cfa717825386c5~mv2.png" alt="Logo Creapp-i" style="height: 120px; width: auto;">
+    <img src="https://static.wixstatic.com/media/513107_4949f92e885b46b2b8cfa717825386c5~mv2.png" alt="Logo Créapp-i" style="height: 120px; width: auto;">
     <img src="https://www.compagnonsbatisseurs.eu/assets/img/Logo_simple_C_H_web.png" alt="Logo Compagnons-Bâtisseurs" style="height: 120px; width: auto;">
   </div>
 </div>
 
 ---
 
-# Présentation de Creapp-i
+# Présentation de Créapp-i
 
 <div class="grid-2">
   <div class="card">
     <div class="pill">À propos</div>
     <h2>Agence de développement sur mesure</h2>
-    <p>Basée à La Réunion, Creapp-i transforme vos idées en <b>solutions digitales concrètes</b>, de la conception à la mise en œuvre.</p>
+    <p>Basée à La Réunion, Créapp-i transforme vos idées en <b>solutions digitales concrètes</b>, de la conception à la mise en œuvre.</p>
     <ul>
       <li>Processus modernisés et simplifiés</li>
       <li>Outils <b>efficaces, intuitifs</b> et accessibles</li>
@@ -200,57 +200,37 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
 <div class="grid-2">
   <div class="card">
     <div class="pill">Enjeux</div>
-    <ul>
-      <li>Digitaliser et centraliser la <b>gestion des chantiers</b></li>
-      <li>Fluidifier la communication <b>terrain ↔ administration</b></li>
-      <li>Assurer la <b>traçabilité</b> des interventions, devis, photos et documents</li>
-      <li>Réduire l’usage du papier (impact éco-responsable)</li>
-    </ul>
+    <p>Digitaliser et centraliser la <b>gestion des chantiers</b>, fluidifier la communication <b>terrain ↔ administration</b>, assurer la <b>traçabilité</b> des interventions, devis, photos et documents, et réduire l'usage du papier pour un impact éco-responsable.</p>
   </div>
   <div class="card">
     <div class="pill">Bénéfices</div>
-    <ul>
-      <li>Outil simple, moderne et collaboratif</li>
-      <li>Synchronisation temps réel via <b>Firebase</b></li>
-      <li>Adoption facilitée pour utilisateurs non technophiles</li>
-    </ul>
+    <p>Un outil simple, moderne et collaboratif avec une synchronisation en temps réel et une adoption facilitée pour les utilisateurs non technophiles.</p>
   </div>
 </div>
 
 ---
 
-# Objectifs principaux
+# Objectifs du projet
+
+<div class="card" style="margin-bottom:16px; text-align:left">
+  <div class="pill">🎯 Objectifs principaux</div>
+  <p>Enregistrer directement toutes les informations d'un <b>projet de travaux</b> (visite, devis, photos, documents). Garantir un <b>partage fluide des données</b> entre terrain et administration. <b>Supprimer les processus papier</b> au profit d'une gestion numérique simple.</p>
+</div>
 
 <div class="grid-2">
-  <div class="card">
-    <div class="pill">Application Animateurs</div>
-    <ul>
-      <li>Visites, diagnostics, interventions</li>
-      <li>Devis, documents, photos</li>
-      <li>Statistiques et calendrier</li>
-    </ul>
+  <div class="card" style="text-align:left">
+    <div class="pill">👥 Objectifs utilisateurs</div>
+    <p>Interface <b>intuitive et accessible</b> pour utilisateurs non technophiles. Centraliser les données pour améliorer la <b>communication entre équipes</b>.</p>
   </div>
-  <div class="card">
-    <div class="pill">Plateforme Administrative</div>
-    <ul>
-      <li>Validation des devis & supervision</li>
-      <li>Archivage & reporting</li>
-      <li>Multi-structures & journalisation</li>
-    </ul>
+  <div class="card" style="text-align:left">
+    <div class="pill">⚙️ Objectifs techniques</div>
+    <p>Solution <b>légère et maintenable</b>. <b>Synchronisation en temps réel</b> entre les applications web. <b>Accessibilité optimale</b> sur différents supports.</p>
   </div>
-</div>
-
-<div class="card" style="margin-top:18px">
-  <div class="pill">Architecture</div>
-  <ul>
-    <li>Base de données centralisée <b>Firebase</b> (sécurité, stockage, synchro temps réel)</li>
-    <li>Interfaces <b>intuitives</b> et accessibles</li>
-  </ul>
 </div>
 
 ---
 
-# Déroulement du projet
+# Déroulement du projet (Partie 1)
 
 <div class="grid-2">
   <div class="card">
@@ -258,7 +238,7 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
     <h2>Analyse & Spécifications</h2>
     <ul>
       <li>Recueil des besoins (animateurs, administratifs)</li>
-      <li>Cas d’utilisation MVP (visites, devis, interventions, documents, photos)</li>
+      <li>Cas d'utilisation MVP (visites, devis, interventions, documents, photos)</li>
       <li>Cahier des charges & priorisation</li>
     </ul>
   </div>
@@ -267,20 +247,24 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
     <h2>Conception</h2>
     <ul>
       <li>Maquettes & parcours utilisateurs</li>
-      <li>Architecture Firebase multi-structures</li>
+      <li>Organisation des données pour gérer plusieurs structures en parallèle</li>
       <li>Règles de sécurité & stockage</li>
     </ul>
   </div>
 </div>
 
-<div class="grid-2" style="margin-top:18px">
+---
+
+# Déroulement du projet (Partie 2)
+
+<div class="grid-2">
   <div class="card">
     <div class="pill">Phase 3</div>
     <h2>Développement</h2>
     <ul>
       <li>Apps Web Animateurs & Administratifs</li>
       <li>Modules : chantiers, devis, diagnostics, interventions, documents, statistiques</li>
-      <li>Tests fonctionnels & pilotes</li>
+      <li>Tests fonctionnels</li>
     </ul>
   </div>
   <div class="card">
@@ -288,7 +272,7 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
     <h2>Mise en place & Formation</h2>
     <ul>
       <li>Déploiement production</li>
-      <li>Formation des équipes CB</li>
+      <li>Formation des équipes Compagnons-Bâtisseurs</li>
       <li>Documentation technique & fonctionnelle</li>
     </ul>
   </div>
@@ -314,24 +298,33 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
 
 ---
 
-# Devis forfaitaire 💶
+# Devis forfaitaire
+
+<div class="card" style="margin-bottom:14px; padding:24px">
+  <div class="pill">Projet (forfait global)</div>
+  <div style="margin-top:16px">
+    <p style="font-size:1rem; margin:8px 0"><b>Montant total HT :</b> <span style="font-size:1.2rem; color:var(--brand-600)">15 600 €</span></p>
+    <p style="font-size:1rem; margin:8px 0"><b>TVA (8,5 %) :</b> <span style="font-size:1.2rem">1 326 €</span></p>
+    <p style="font-size:1.05rem; margin-top:12px"><b>Total TTC :</b> <span style="font-size:1.5rem; color:var(--brand-600); font-weight:800">16 326 €</span></p>
+  </div>
+</div>
 
 <div class="grid-2">
-  <div class="card">
-    <div class="pill">Projet (forfait global)</div>
-    <ul>
-      <li><b>Montant total HT :</b> 15 600 €</li>
-      <li><b>TVA (8,5 %) :</b> 1 326 €</li>
-      <li><b>Total TTC :</b> <b style="color:#0b614b">16 326 €</b></li>
+  <div class="card" style="text-align:left">
+    <div class="pill">✅ Inclus dans le forfait</div>
+    <ul style="margin-top:10px; font-size:0.95rem; line-height:1.6">
+      <li><b>Formation complète</b> des équipes</li>
+      <li><b>Documentation</b> technique & fonctionnelle</li>
+      <li><b>Support</b> post-livraison (1 mois)</li>
+      <li><b>Mises en production</b></li>
     </ul>
- 
   </div>
-  <div class="card alt">
-    <div class="pill">Option — Maintenance mensuelle</div>
-    <ul>
-      <li><b>HT :</b> 300 €</li>
-      <li><b>TVA (8,5 %) :</b> 25,50 €</li>
-      <li><b>Total TTC :</b> <b style="color:#0b614b">325,50 €</b></li>
+  <div class="card" style="text-align:left">
+    <div class="pill">📋 Livrables</div>
+    <ul style="margin-top:10px; font-size:0.95rem; line-height:1.6">
+      <li>Application web <b>Animateurs</b></li>
+      <li>Plateforme <b>Administrative</b></li>
+      <li>Documentation technique</li>
     </ul>
   </div>
 </div>
@@ -340,23 +333,23 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
 
 # Maintenance optionnelle
 
-<div class="grid-2">
-  <div class="card">
-    <div class="pill">Garantie 1</div>
-    <h2>Rétablissement du service</h2>
-    <ul>
-      <li>Intervention prioritaire en cas d’incident</li>
-      <li>Diagnostic & correction rapides</li>
-    </ul>
+<div class="card" style="margin-bottom:14px; padding:24px">
+  <div class="pill">Tarif maintenance</div>
+  <div style="margin-top:16px">
+    <p style="font-size:1rem; margin:8px 0"><b>HT :</b> <span style="font-size:1.2rem; color:var(--brand-600)">300 € / mois</span></p>
+    <p style="font-size:1rem; margin:8px 0"><b>TVA (8,5 %) :</b> <span style="font-size:1.2rem">25,50 €</span></p>
+    <p style="font-size:1.05rem; margin-top:12px"><b>Total TTC :</b> <span style="font-size:1.5rem; color:var(--brand-600); font-weight:800">325,50 € / mois</span></p>
   </div>
-  <div class="card">
-    <div class="pill">Garantie 2</div>
-    <h2>Sécurité & RGPD</h2>
-    <ul>
-      <li>Mises à jour sécurité & performance</li>
-      <li>Contrôles réguliers de conformité RGPD</li>
-      <li>Rapport périodique des actions</li>
-    </ul>
+</div>
+
+<div class="grid-2">
+  <div class="card" style="text-align:left">
+    <div class="pill">🔧 Rétablissement du service</div>
+    <p style="margin-top:12px">Intervention prioritaire en cas d'incident avec diagnostic et correction rapides pour garantir la continuité de votre activité.</p>
+  </div>
+  <div class="card" style="text-align:left">
+    <div class="pill">🔒 Sécurité & RGPD</div>
+    <p style="margin-top:12px">Mises à jour régulières de sécurité et performance. Contrôles de conformité RGPD avec rapport périodique des actions effectuées.</p>
   </div>
 </div>
 
@@ -366,7 +359,7 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
 
 <div class="card">
   <div class="pill">Coordonnées</div>
-  <p><b>Alexandre MAILLOT — Dirigeant Creapp-i</b></p>
+  <p><b>Alexandre MAILLOT — Dirigeant Créapp-i</b></p>
   <p>📞 06 92 78 29 75 · 📧 alexandre.maillot@creapp-i.com</p>
   <p>🏢 26 chemin bateau, 97425 Les Avirons</p>
   <p>💼 SIRET : 951 325 943 00011 · 🌐 www.creapp-i.com</p>
@@ -374,19 +367,213 @@ tbody tr:not(:last-child) td { border-bottom:1px dashed var(--brand-200); }
 
 ---
 
-# Annexe — Liste des Use Cases Compagnons-Bâtisseurs
+# Authentification
 
-<div class="card">
-  <p>Reprise intégrale du fichier <b>« Compagnon Bâtisseur — Usecase.csv »</b></p>
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Authentification</div>
   <ul>
-    <li>Cas d’utilisation détaillés (animateurs, administratifs, supervision, etc.)</li>
-    <li>Référence fonctionnelle pour valider le périmètre</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>me connecter</b> avec mon e-mail et mot de passe afin d'accéder à mes chantiers.</li>
+    <li>En tant qu'<b>animateur</b>, je dois être <b>automatiquement associé</b> à ma structure afin de voir uniquement mes données.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>me déconnecter</b> afin de sécuriser ma session.</li>
   </ul>
-  <p style="opacity:.9">👉 Si la liste est longue, éclater en plusieurs slides (copier-coller Markdown depuis le CSV).</p>
+</div>
+
+<div class="card" style="text-align:left; margin-top:18px">
+  <div class="pill">Administratif — Authentification</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>me connecter</b> avec mon e-mail et mot de passe afin d'accéder à mes dossiers.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>me déconnecter</b> pour sécuriser ma session.</li>
+  </ul>
 </div>
 
 ---
 
-layout: center
-# Fonds vert partout, merci 🙏
-<p><a class="btn" href="mailto:alexandre.maillot@creapp-i.com">Nous contacter</a> <a class="btn secondary" href="https://www.creapp-i.com">Site web</a></p>
+# Gestion des chantiers (Partie 1)
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Chantiers</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>voir la liste de mes chantiers</b> afin de suivre leur avancement.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>créer un nouveau chantier</b>.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>modifier un chantier existant</b> afin de corriger ou compléter ses informations.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>ajouter des documents au chantier</b> afin de centraliser les justificatifs.</li>
+    <li>En tant que <b>système</b>, je dois <b>changer automatiquement le statut du chantier</b> afin de refléter son avancement réel.</li>
+  </ul>
+</div>
+
+---
+
+# Gestion des chantiers (Partie 2)
+
+<div class="card" style="text-align:left">
+  <div class="pill">Administratif — Chantiers</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>consulter les chantiers en détail</b> afin de vérifier les informations et documents.</li>
+  </ul>
+</div>
+
+---
+
+# Problèmes
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Problèmes</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>ajouter un problème avec une photo « avant »</b> afin de documenter la situation initiale.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>voir la liste complète des problèmes</b> afin de préparer les interventions.</li>
+  </ul>
+</div>
+
+---
+
+# Devis (1/2)
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Devis</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>créer un devis lié à un chantier</b> afin d'estimer le coût des travaux.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>ajouter, modifier et supprimer des articles</b> afin d'ajuster le contenu du devis.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>faire signer le devis sur tablette</b> afin d'obtenir la preuve d'accord du client.</li>
+    <li>En tant que <b>système</b>, je dois <b>verrouiller le devis signé</b> afin de garantir son intégrité.</li>
+  </ul>
+</div>
+
+---
+
+# Devis (2/2)
+
+<div class="card" style="text-align:left">
+  <div class="pill">Administratif — Devis</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>ouvrir un devis</b> afin de vérifier son contenu.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>modifier un devis</b> afin de corriger ou ajuster les montants avant validation.</li>
+    <li>En tant que <b>chef de travaux</b>, je dois pouvoir <b>valider ou rejeter un devis</b> afin d'autoriser ou refuser les travaux.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>créer une révision d'un devis signé</b> afin de produire une nouvelle version à re-signer.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>ajouter un commentaire de validation</b> afin d'informer l'animateur.</li>
+    <li>En tant que <b>système</b>, je dois <b>verrouiller les devis signés, invalider les signatures en cas de révision, et archiver automatiquement les devis validés</b>.</li>
+  </ul>
+</div>
+
+---
+
+# Interventions
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Interventions</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>ajouter une intervention sur un chantier</b> afin de planifier une action terrain.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>accéder à la liste des problèmes à traiter depuis l'intervention</b> afin de les résoudre sur place.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>prendre une photo « après » pour un problème</b> afin de le marquer comme résolu.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>faire signer la fin des travaux</b> afin de valider l'intervention.</li>
+  </ul>
+</div>
+
+---
+
+# Visites
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Visites</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>planifier une visite client</b> afin de suivre l'évolution du chantier.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>saisir des notes de visite</b> afin de documenter l'échange.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>faire signer la visite si nécessaire</b> afin d'attester de la présence.</li>
+  </ul>
+</div>
+
+---
+
+# Calendrier
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Calendrier</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>voir le calendrier de mes interventions et visites</b> afin de planifier mon activité.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>ajouter une intervention ou une visite directement depuis le calendrier</b> afin de gagner du temps.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>ouvrir la fiche d'un chantier depuis un événement</b> afin d'accéder à ses détails.</li>
+  </ul>
+</div>
+
+---
+
+# Documents
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Documents</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>voir et télécharger les documents existants</b> afin de les consulter sur le terrain.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>supprimer un document</b> afin de maintenir la base à jour.</li>
+  </ul>
+</div>
+
+<div class="card" style="text-align:left; margin-top:18px">
+  <div class="pill">Administratif — Documents</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>voir et télécharger les documents d'un chantier</b> afin de contrôler leur conformité.</li>
+    <li>En tant que <b>système</b>, je dois <b>classer automatiquement les documents par type et chantier</b>.</li>
+  </ul>
+</div>
+
+---
+
+# Ergonomie
+
+<div class="card" style="text-align:left">
+  <div class="pill">Animateur — Ergonomie</div>
+  <ul>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>naviguer simplement entre les modules</b> afin de travailler efficacement sur le terrain.</li>
+    <li>En tant qu'<b>animateur</b>, je dois pouvoir <b>recevoir des messages clairs en cas d'erreur ou de succès</b>.</li>
+  </ul>
+</div>
+
+<div class="card" style="text-align:left; margin-top:18px">
+  <div class="pill">Administratif — Ergonomie</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>naviguer rapidement entre les modules</b> afin d'analyser et valider efficacement.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>rechercher rapidement un chantier ou un devis</b> afin de gagner du temps.</li>
+  </ul>
+</div>
+
+---
+
+# Administration centrale
+
+<div class="card" style="text-align:left">
+  <div class="pill">Administrateur central</div>
+  <ul>
+    <li>En tant qu'<b>administrateur central</b>, je dois pouvoir <b>accéder à la vue consolidée des structures</b> afin de suivre leur activité.</li>
+    <li>En tant qu'<b>administrateur central</b>, je dois pouvoir <b>ajouter ou désactiver une structure</b> afin de gérer le réseau national.</li>
+  </ul>
+</div>
+
+---
+
+# Gestion des utilisateurs
+
+<div class="card" style="text-align:left">
+  <div class="pill">Administratif — Utilisateurs</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>créer, modifier et supprimer des comptes</b> afin de gérer les accès.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>réinitialiser le mot de passe d'un utilisateur</b> afin de l'aider à se reconnecter.</li>
+  </ul>
+</div>
+
+---
+
+# Archivage & Traçabilité
+
+<div class="card" style="text-align:left">
+  <div class="pill">Administratif — Archivage</div>
+  <ul>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>consulter les chantiers archivés</b> afin d'accéder aux dossiers clos.</li>
+    <li>En tant qu'<b>administratif</b>, je dois pouvoir <b>rechercher un dossier archivé</b> afin de retrouver un document spécifique.</li>
+    <li>En tant que <b>système</b>, je dois <b>archiver automatiquement les chantiers terminés</b> afin de garantir la conformité RGPD.</li>
+  </ul>
+</div>
+
+<div class="card" style="text-align:left; margin-top:18px">
+  <div class="pill">Système — Traçabilité</div>
+  <ul>
+    <li>En tant que <b>système</b>, je dois <b>journaliser chaque modification</b> pour assurer la traçabilité.</li>
+  </ul>
+</div>
