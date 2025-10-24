@@ -1,0 +1,19 @@
+{
+  "name": "compagnon-batisseur",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "deploy": "slidev build && gh-pages -d dist"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^52.6.0"
+  },
+  "dependencies": {
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "vue": "^3.5.22"
+  }
+}
