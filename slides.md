@@ -305,7 +305,7 @@ tbody tr:not(:last-child) td { border-bottom:1px solid #f0f0f0; }
   <div style="margin-top:16px">
     <p style="font-size:1rem; margin:8px 0"><b>Montant total HT :</b> <span style="font-size:1.2rem; color:var(--brand-600)">15 600 €</span></p>
     <p style="font-size:1rem; margin:8px 0"><b>TVA (8,5 %) :</b> <span style="font-size:1.2rem">1 326 €</span></p>
-    <p style="font-size:1.05rem; margin-top:12px"><b>Total TTC :</b> <span style="font-size:1.5rem; color:var(--brand-600); font-weight:800">16 326 €</span></p>
+    <p style="font-size:1.05rem; margin-top:12px"><b>Total TTC :</b> <span style="font-size:1.5rem; color:var(--brand-600); font-weight:800">16 926 €</span></p>
   </div>
 </div>
 
