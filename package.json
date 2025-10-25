@@ -9,7 +9,8 @@
     "deploy": "slidev build && gh-pages -d dist"
   },
   "devDependencies": {
-    "@slidev/cli": "^52.6.0"
+    "@slidev/cli": "^52.6.0",
+    "playwright-chromium": "^1.56.1"
   },
   "dependencies": {
     "@slidev/theme-default": "latest",
